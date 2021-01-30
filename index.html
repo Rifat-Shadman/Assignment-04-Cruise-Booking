@@ -14,7 +14,7 @@
 </head>
 
 <body>
-    <!--Header and Menu Section-->
+    <!-- Header and Menu Section -->
     <header class="container">
         <nav>
             <ul>
@@ -39,7 +39,7 @@
             <h3>Book Ocean Time</h3>
             <div class="input-group">
                 <label for="">Flying From</label>
-                <input class="inp-style" type="text" name="" placeholder="Dhake, Bangladesh">
+                <input class="inp-style" type="text" name="" placeholder="Dhaka, Bangladesh">
             </div>
             <div class="input-group">
                 <label for="">Flying To</label>
@@ -55,25 +55,32 @@
                     <input class="inp-style" type="date" name="">
                 </div>
             </div>
+            
+
+            <h6>First Class ($<span id="firstclassUnit-count">150</span>)</h6>
             <div class="input-group f-class">
+                <div class="col-9">
+                    <input id="firstclass-count" class="form-control text-left " value="0">
+                </div>
                 <div>
-                    <label for="">First Class ($<span id="firstclassUnit-count">150</span>)</label>
-                    <input id="firstclass-count" class="inp-style inp-width" type="number" name="" value="0">
+                    <button onclick="handleProductChange('firstclass', true)" class="btn btn-outline-secondary" type="button">+</button>
+                    <button onclick="handleProductChange('firstclass', false)" class="btn btn-outline-secondary" type="button">-</button>
                 </div>
-                <div class="plus-minus-btn">
-                    <p><span onclick="handleProductChange('firstclass', true)">+ </span> <span onclick="handleProductChange('firstclass', false)">-</span>  </p>
-                </div>
+                
             </div>
             
-            <div class="input-group f-class">
+            <h6>Economy Class ($<span id="economyUnit-count">100</span>)</h6>
+            <div class="input-group f-class g-2">
+                <div class="col-9">
+                    <input id="economy-count" class="form-control text-left "  value="0">
+                </div>
                 <div>
-                    <label for="">Economy ($<span id="economyUnit-count">100</span>)</label>
-                    <input id="economy-count" class="inp-style inp-width" type="number" name="" value="0">
+                    <button onclick="handleProductChange('economy', true)" class="btn btn-outline-secondary" type="button">+</button>
+                    <button onclick="handleProductChange('economy', false)" class="btn btn-outline-secondary" type="button">-</button>
                 </div>
-                <div class="plus-minus-btn">
-                    <p> <span onclick="handleProductChange('economy', true)">+</span> <span onclick="handleProductChange('economy', false)">-</span> </p>
-                </div>
+                
             </div>
+
             <div class="calculations">
                 <div class="amount">
                     <div class="left">
@@ -89,7 +96,7 @@
                         <p>Charge 10% VAT</p>
                     </div>
                     <div class="right">
-                        <p>$ <span id="tax-amount">0</span></p>
+                        <p>$ <span id="vat-amount">0</span></p>
                     </div>
                 </div>
                 <hr>
@@ -135,14 +142,14 @@
             const totalprice = firstClassCount * getUnitPrice('firstclassUnit') + economyCount * getUnitPrice('economyUnit');
          
 
-            const tax = Math.round(totalprice / 10);
-            document.getElementById('tax-amount').innerText = tax;
+            const vat = Math.round(totalprice / 10);
+            document.getElementById('vat-amount').innerText = vat;
             document.getElementById('subtotal').innerText =  totalprice;
-            const grandTotal = totalprice + tax;
+            const grandTotal = totalprice + vat;
             document.getElementById('grand-total').innerText=  grandTotal;
          
         }
-        console.log(getInputValue('economyUnit'));
+        // console.log(getUnitPrice('economyUnit'));
         
         function getInputValue(product){
             const productInput = document.getElementById(product + '-count').value;
