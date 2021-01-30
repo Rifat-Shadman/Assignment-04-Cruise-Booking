@@ -140,10 +140,9 @@ nav ul li a:hover, a.active{
     width: 1.5em;
 }
 
-
-
 #confirmation-area{
     display: none;
     color: white;
     font-family: 'Bebas Neue', cursive;
 }
+
