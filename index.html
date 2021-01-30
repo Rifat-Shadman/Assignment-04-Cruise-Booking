@@ -120,13 +120,16 @@
 
     <div id="confirmation-area">
         <div class="col">
-            <h1 class="text-center" style="padding-top: 6em;"> <i class="far fa-calendar-check"></i> Success!</h1>
+            <h1 class="text-center display-1" style="padding-top: 2em;" > <i class="far fa-calendar-check"></i> Success!</h1>
+            
         </div>
         
-        <h4 class="text-center" >Your request is under processing.</h4>
+        <h4 class="text-center" >Your reservation is confirmed</h4> <br><br><br>
         <h5 class="text-center text-danger">Your payable amount: $ <span id="amount-declare">0</span></h5>
-        <h5 class="text-center text-danger">First Class: <span id="firstclass-Seats" >0</span> ;  Economy Class: <span id="economy-Seats">0</span></h5>
+        <h5 class="text-center text-danger">First Class: <span id="firstclass-Seats" >0</span> ;  Economy Class: <span id="economy-Seats">0</span></h5> <br>
         <h6 class="text-center" > We've sent you a confirmation mail. Check your provided email account for further instructions.</h6>
+        <h2 class="text-center text-danger" ><em>Thank you for being with us</em> </h2>
+        <button  type="button" class="btn btn-danger position-absolute bottom-0 end-0"> <a href="index.html" style="color: white;">Previous</a> </button>
     </div>
     
     <!--Thank You-->
@@ -182,10 +185,13 @@
 
 
         function bookNowButtonHandler(){
+           
             const mainArea = document.getElementById("main-section");
             mainArea.style.display = "none";
             const confirmationArea = document.getElementById("confirmation-area");
             confirmationArea.style.display = "block";
+            
+            
         }
     
     </script>
