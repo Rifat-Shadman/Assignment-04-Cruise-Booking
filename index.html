@@ -120,12 +120,12 @@
 
     <div id="confirmation-area">
         <div class="col">
-           
             <h1 class="text-center" style="padding-top: 6em;"> <i class="far fa-calendar-check"></i> Success!</h1>
         </div>
         
         <h4 class="text-center" >Your request is under processing.</h4>
-        <h5 class="text-center text-danger">Your payable amount: $<span id="amount-declare">0</span></h5>
+        <h5 class="text-center text-danger">Your payable amount: $ <span id="amount-declare">0</span></h5>
+        <h5 class="text-center text-danger">First Class: <span id="firstclass-Seats" >0</span> ;  Economy Class: <span id="economy-Seats">0</span></h5>
         <h6 class="text-center" > We've sent you a confirmation mail. Check your provided email account for further instructions.</h6>
     </div>
     
@@ -160,6 +160,9 @@
             const grandTotal = totalprice + vat;
             document.getElementById('grand-total').innerText=  grandTotal;
             document.getElementById('amount-declare').innerText = grandTotal;
+
+            document.getElementById('firstclass-Seats').innerText = firstClassCount;
+            document.getElementById('economy-Seats').innerText = economyCount;
          
         }
         // console.log(getUnitPrice('economyUnit'));
